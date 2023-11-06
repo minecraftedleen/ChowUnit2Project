@@ -32,7 +32,7 @@ public class LinearEquation  {
 
     public String equation() {
         if (slope() != 0) {
-            return "y = " + slope() + "x " + "+ " + yIntercept();
+            return "y = " + (y2 - y1) + "/" + (x2 - x1) + "x " + "+ " + yIntercept();
         }
         else {
             return "y = " + yIntercept();
