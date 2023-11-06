@@ -8,15 +8,14 @@ public class LinearEquation  {
     private String coord1;
     private String coord2;
 
-    public LinearEquation(String coord1, String coord2) {
-        this.coord1 = coord1;
-        this.coord2 = coord2;
-        int divideIndex1 = coord1.indexOf(",");
-        int divideIndex2 = coord1.indexOf(",");
-        x1 = Integer.parseInt(coord1.substring(0, divideIndex1));
-        y1 = Integer.parseInt(coord1.substring(divideIndex1 + 1));
-        x2 = Integer.parseInt(coord2.substring(0, divideIndex2));
-        y2 = Integer.parseInt(coord2.substring(divideIndex2 + 1));
+    public LinearEquation(int x1, int y1, int x2, int y2) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
+        coord1 = "(" + x1 + ", " + y1 + ")";
+        coord2 = "(" + x2 + ", " + y2 + ")";
+
     }
 
     public double distance() {
