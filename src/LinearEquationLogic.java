@@ -18,15 +18,17 @@ public class LinearEquationLogic {
     }
 
     public void start() {
+        System.out.println("Welcome!");
+        while (next.equals("y")) {
             getCoords();
-            System.out.println(LinearEquation.lineInfo());
-            getCoords2();
-
+            if (x2 - x1 != 0) {
+                getCoords2();
+            }
+            end();
+        }
     }
 
     private void getCoords() {
-
-            System.out.println("Welcome!");
             System.out.print("Enter coordinate 1: ");
             coord1 = scan.nextLine();
             System.out.print("Enter coordinate 2: ");
@@ -38,6 +40,7 @@ public class LinearEquationLogic {
             x2 = Integer.parseInt(coord2.substring(1, divideIndex2));
             y2 = Integer.parseInt(coord2.substring(divideIndex2 + 2, coord2.length() - 1));
             LinearEquation = new LinearEquation(x1, y1, x2, y2);
+            System.out.println(LinearEquation.lineInfo());
 
     }
 
@@ -48,12 +51,21 @@ public class LinearEquationLogic {
             double x = scan.nextDouble();
             System.out.println();
             System.out.println("The point on the line is " + LinearEquation.coordinateForX(x));
-            System.out.println();
-            System.out.print("Would you like to enter another pair of coordinates? y/n: ");
-            next = scan.nextLine();
-            if (next.equals("y")) {
-                start();
-            }
+
+
+
+    }
+
+    private void end() {
+        if (x2 - x1 != 0) {
+            scan.nextLine();
+        }
+        System.out.println();
+        System.out.print("Would you like to enter another pair of coordinates? y/n: ");
+        next = scan.nextLine();
+        if (!next.equals("y")) {
+            System.out.println("Thank you for using this!");
+        }
     }
 
 }

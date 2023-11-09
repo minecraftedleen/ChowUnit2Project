@@ -46,9 +46,15 @@ public class LinearEquation  {
 
     public String lineInfo() {
         String allLines = "The two points are: " + coord1 + " and " + coord2 + "\n";
-        allLines += "The equation of the lines between these points is: " + equation() + "\n";
-        allLines += "The slope of this line is: " + slope() + "\n";
-        allLines += "The y inercept of this line is: " + yIntercept() + "\n";
+
+        if (x2 - x1 != 0) {
+            allLines += "The equation of the lines between these points is: " + equation() + "\n";
+            allLines += "The slope of this line is: " + slope() + "\n";
+            allLines += "The y intercept of this line is: " + yIntercept() + "\n";
+        } else {
+            allLines += "The equation of the lines between these points is: x = " + x1 + "\n";
+        }
+
         allLines += "The distance between these points is " + distance();
         return allLines;
     }
